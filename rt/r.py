@@ -56,7 +56,7 @@ def RototanslateData(labelmapFilename=None,roifileName=None,imageFileName=None,r
         if resample:
             target=referenceImageFileName
 
-        OUT.append({"images":im,"rototranslation":rt,"resample":target})
+        OUT.append({"images":im,"rototranslation":rt,"resampled":target})
     
     P.changePath(outputDirectory)
     

@@ -35,7 +35,13 @@ RototanslateData(labelmapFilename="tests/data/labelmap.nii.gz",imageFileName="te
 
 ```
 
-## command line
+
+## outputs
+N diretories where N is the number of RT requested
+and json file that summrize the RT
+
+in the form of
+[{"images": ["/g/CEMtest/000000/9071781.nii.gz"], "rototranslation": [0.0, 10.0, 0.0, 0.0, 0.0, 0.0], "resampled": "self"}]
 
 
     
