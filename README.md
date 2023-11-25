@@ -12,7 +12,7 @@ Montin E, Kijowski R, Youm T, Lattanzi R. A radiomics approach to the diagnosis 
 
 
 
-## installation
+## Installation
 ```
 #create an environment 
 python3 -m venv DA
@@ -20,7 +20,7 @@ source DA/bin/activate
 pip install git+https://github.com/erosmontin/DA.git
 
 ```
-## usage Example
+## Usage Example
 
 ### rt
 rigid rototranslations based on itk
@@ -49,7 +49,7 @@ RototanslateData(labelmapFilename="tests/data/labelmap.nii.gz",imageFileName="te
 ```
 
 
-## outputs
+## Outputs
 N diretories where N is the number of RT requested
 and json file that summrize the RT
 
