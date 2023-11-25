@@ -1,11 +1,11 @@
 import pyable_eros_montin.imaginable as ima
 import pyable_eros_montin.dev as dev
 import pynico_eros_montin.pynico as pn
-def RototanslateData(labelmapFilename=None,roifileName=None,imageFileName=None,rototranslations=[[5,5,5,0,0,0]],outputDirectory="/tmp/",referenceImageFileName=None):
+def RototanslateData(labelmapFileName=None,roifileName=None,imageFileName=None,rototranslations=[[5,5,5,0,0,0]],outputDirectory="/tmp/",referenceImageFileName=None):
     """_summary_
 
     Args:
-        labelmapFilename (_type_, optional): _description_. Defaults to None.
+        labelmapFileName (_type_, optional): _description_. Defaults to None.
         roifileName (_type_, optional): _description_. Defaults to None.
         imageFileName (_type_, optional): _description_. Defaults to None.
         rototranslations (list, optional): _description_. Defaults to [[5,5,5,0,0,0]]. (deg,deg,deg,mm,mm,mm)
@@ -22,12 +22,12 @@ def RototanslateData(labelmapFilename=None,roifileName=None,imageFileName=None,r
         REFERENCE=ima.Imaginable(referenceImageFileName)
         resample=True
     
-    if labelmapFilename is not None:
-        L=dev.LabelMapable(labelmapFilename)
+    if labelmapFileName is not None:
+        L=dev.LabelMapable(labelmapFileName)
         if resample:
             L.resampleOnTargetImage(REFERENCE   )
         TOROT.append(L)
-        FILENAMES.append(labelmapFilename)
+        FILENAMES.append(labelmapFileName)
     if roifileName is not None:
         L=ima.Roiable(roifileName)
         if resample:
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     parser.add_argument('--referenceimage', type=str, default=None,
                     help='(optional) if you want to resample all the images in a reference image space')
     args = parser.parse_args()
-    RototanslateData(labelmapFilename=args.labelmap,roifileName=args.roi,imageFileName=args.image,rototranslations=[args.rototranslation],outputDirectory=args.outputDirectory)
+    RototanslateData(labelmapFileName=args.labelmap,roifileName=args.roi,imageFileName=args.image,rototranslations=[args.rototranslation],outputDirectory=args.outputDirectory)
 
     
     

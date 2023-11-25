@@ -42,8 +42,23 @@ a summary is made in a json file
 
 # you can also specify a refence image where all the roi,labelmap or images will be resampled
 
-RototanslateData(labelmapFilename="tests/data/labelmap.nii.gz",imageFileName="tests/data/image.nii.gz",rototranslations=RT,outputDirectory="/tmp/TEST",referenceImageFileName=None)
 
+# rototranslate a ROI
+RototanslateData(roiFileName="tests/data/roi.nii.gz",rototranslations=RT,outputDirectory="/tmp/TEST")
+
+# rototranslate a labelmap
+RototanslateData(labelmapFileName="tests/data/roi.nii.gz",rototranslations=RT,outputDirectory="/tmp/TEST")
+
+
+# rototranslate an image
+RototanslateData(imageFileName="tests/data/image.nii.gz",rototranslations=RT,outputDirectory="/tmp/TEST")
+
+# rototranslate an image and a labelmap
+RototanslateData(labelmapFileName="tests/data/labelmap.nii.gz",imageFileName="tests/data/image.nii.gz",rototranslations=RT,outputDirectory="/tmp/TEST",referenceImageFileName=None)
+
+
+# rototranslate an image and a labelmap on a resampled in a diffrent space
+RototanslateData(labelmapFileName="tests/data/labelmap.nii.gz",imageFileName="tests/data/image.nii.gz",rototranslations=RT,outputDirectory="/tmp/TEST",referenceImageFileName='tests/data/superesolutedimage.nii.gz')
 
 
 ```
@@ -57,6 +72,12 @@ in the form of
 [{"images": ["/g/CEMtest/000000/9071781.nii.gz"], "rototranslation": [0.0, 10.0, 0.0, 0.0, 0.0, 0.0], "resampled": "self"}]
 
 
+# Command Line
+
+```
+python -m rt.r --labelmapFilename tests/data/labelmap.nii.gz --rototranslations 0 10 0 0 0 0
+
+```
     
 [*Dr. Eros Montin, PhD*](http://me.biodimensional.com)
 **46&2 just ahead of me!**
