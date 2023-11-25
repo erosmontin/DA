@@ -28,7 +28,7 @@ rigid rototranslations based on itk
 ```
 from rt.r import *
 
-#define a 3D rototranlation array
+#define a 3D rototranslation array
 rt=[5,5,5,0,0,0] (deg,deg,deg,mm,mm,mm) (itk rototranslation class)
 RT=[rt]
 # append other rototranslations if needed
