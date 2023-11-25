@@ -1,4 +1,17 @@
 # DA
+CITEUS
+
+<div>
+<div style="background-color: lightgray; padding: 10px">
+<span style="color: black;">
+Montin E, Kijowski R, Youm T, Lattanzi R. A radiomics approach to the diagnosis of femoroacetabular impingement. Front Radiol. 2023;3:1151258. Published 2023 Mar 20. doi:10.3389/fradi.2023.1151258
+<div>
+</div>
+</div>
+
+
+
+
 ## installation
 ```
 #create an environment 
