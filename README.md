@@ -1,25 +1,43 @@
-# pyable
-My collection of image and mesh functions
+# DA
+## installation
+```
+#create an environment 
+python3 -m venv DA
+source DA/bin/activate
+pip install git+https://github.com/erosmontin/DA.git
 
-1. imaginable
-1. meshable
+```
+## usage Example
 
-# Classes
-    - Imaginable:
-        image data 
-    - Roiable:
-        Mask with balue 1
-    - LAbelmappable:
-        Roi with multiple values (DEV)
-# versions:
-- 0.0.3 current version
-- 0.0.4 pre release
-    - updated the concept of change and set
-    - dflt interpolation and deflt usenearest..
-    - divide and multiply are casted to float and then cast back to their original pixeltype
-    - getWavelets
-    - left and right functions for HF (tested with Rview)
-    - WIP rigid_transform_3D resampleoncanonicalDirections() using [this git repo](https://github.com/nghiaho12/rigid_transform_3D/blob/master/test_rigid_transform_3D.py)
+### rt
+rigid rototranslations based on itk
+
+```
+from rt.r import *
+
+#define a 3D rototranlation array
+rt=[5,5,5,0,0,0] (deg,deg,deg,mm,mm,mm) (itk rototranslation class)
+RT=[rt]
+# append other rototranslations if needed
+RT.append([15,15,15,0,0,0])
+RT.append([15,15,15,2,0,0])
+
+#decide if you want to RT a roi, a labelmap or an image (in case multiple selected they will be RTed of the same quantity and placed in a directory specified by outputDirectory)
+a summary is made in a json file
+
+
+
+# you can also specify a refence image where all the roi,labelmap or images will be resampled
+
+RototanslateData(labelmapFilename="tests/data/labelmap.nii.gz",imageFileName="tests/data/image.nii.gz",rototranslations=RT,outputDirectory="/tmp/TEST",referenceImageFileName=None)
+
+
+
+```
+
+## command line
+
+
     
 [*Dr. Eros Montin, PhD*](http://me.biodimensional.com)
 **46&2 just ahead of me!**
